@@ -14,13 +14,13 @@ public static void sendPushWithFcm()
             httpClient.DefaultRequestHeaders.UserAgent.Add(new ProductInfoHeaderValue("GCM-PushClient", "1.0.0"));
             httpClient.DefaultRequestHeaders.TryAddWithoutValidation("Authorization", "key=" + apiKey);
 
-            var postContent = new StringContent(j2, Encoding.UTF8, "application/json");
+            var postContent = new StringContent(j1, Encoding.UTF8, "application/json");
             var response = await httpClient.PostAsync("https://android.googleapis.com/gcm/send", postContent);
             if (!response.IsSuccessStatusCode)
             {
             }
         } 				
-	}
+    }
     catch (Exception ex)
     {
     } 
